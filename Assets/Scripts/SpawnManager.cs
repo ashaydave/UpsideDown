@@ -20,11 +20,6 @@ public class SpawnManager : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        
-    }
-
     public void StartSpawning()
     {
        isSpawning = true;

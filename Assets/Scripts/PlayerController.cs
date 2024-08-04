@@ -139,8 +139,8 @@ public class PlayerController : MonoBehaviour
             if(!dimensionSwitchTimer.timerEndScreen.activeSelf)
             {
                 robotEndScreen.SetActive(true);
+                bikeEndScreen.SetActive(false);
             }
-
             gameManager.EndGame();
         }
 
@@ -151,6 +151,7 @@ public class PlayerController : MonoBehaviour
             if (!dimensionSwitchTimer.timerEndScreen.activeSelf)
             {
                 bikeEndScreen.SetActive(true);
+                robotEndScreen.SetActive(false);
             }
             gameManager.EndGame();           
         }

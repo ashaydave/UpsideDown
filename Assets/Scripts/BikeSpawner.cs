@@ -20,11 +20,6 @@ public class BikeSpawner : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-
-    }
-
     public void StartSpawning()
     {
         isSpawning = true;
