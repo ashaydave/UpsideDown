@@ -18,7 +18,9 @@ public class AudioManager : MonoBehaviour
         Death,
         DimensionSwitchUp,
         DimensionSwitchDown,
-        DimensionTimer
+        DimensionTimer,
+        ButtonHover,
+        ButtonClick
     }
 
     /// <summary>

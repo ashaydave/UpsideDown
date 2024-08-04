@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private SpawnManager spawnManager;
     [SerializeField] private BikeSpawner bikeSpawner;
 
+    private bool scoreboardActive = false;
+
 
     // void Start()
     // {
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
     {
         // Smoothly move the camera to the target position
         //mainCamera.transform.position = Vector3.SmoothDamp(mainCamera.transform.position, targetPosition, ref velocity, smoothTime);
-        if (Input.GetKeyDown(KeyCode.R))
+        if (!scoreboardActive && Input.GetKeyDown(KeyCode.R))
         {
             RestartGame();
         }
@@ -115,12 +117,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // Press R to restart
-    private void RestartGame()
+    
+    public void ScoreboardActive(bool scoreboard)
     {
+        scoreboardActive = scoreboard;
+    }
+
+    // Press R to restart
+    public void RestartGame()
+    {
+        scoreboardActive = false;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
         scoreTimer.ResetTimer();
         dimensionSwitchTimer.ResetTimer();
+
         if (playerController.bikeEndScreen != null && isActiveAndEnabled)
         {
             playerController.bikeEndScreen.SetActive(false);
