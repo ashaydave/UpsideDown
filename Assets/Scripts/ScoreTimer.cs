@@ -11,8 +11,7 @@ public class ScoreTimer : MonoBehaviour
     private float time;
     public bool timerOn = false;
 
-    public TextMeshProUGUI timerText;
-
+    public TextMeshProUGUI timerText, finalScoreText;
 
 
     void Update()
@@ -30,6 +29,7 @@ public class ScoreTimer : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
         float ms = Mathf.FloorToInt((currentTime * 100) % 100);
         timerText.text = "Time Alive: " + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, ms);
+        finalScoreText.text = "Final Score: " + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, ms);
     }
 
     public void StartTimer()
