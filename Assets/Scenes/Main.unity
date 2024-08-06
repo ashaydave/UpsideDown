@@ -789,7 +789,7 @@ GameObject:
   - component: {fileID: 137499126}
   - component: {fileID: 137499125}
   m_Layer: 5
-  m_Name: Time Alive (Score Timer)
+  m_Name: Final Score (Score Timer)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1721,6 +1721,7 @@ GameObject:
   - component: {fileID: 316571960}
   - component: {fileID: 316571959}
   - component: {fileID: 316571962}
+  - component: {fileID: 316571963}
   m_Layer: 5
   m_Name: Submit Button
   m_TagString: Untagged
@@ -1791,7 +1792,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 316571960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 316571963}
+        m_TargetAssemblyTypeName: ScoreManager, Assembly-CSharp
+        m_MethodName: SubmitScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &316571960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1842,6 +1855,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e128ca0ebc55ed64f8e5a6397397b27b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &316571963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 316571957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec563b3b0f7443e43b68e22ba6ce46ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScore: {fileID: 137499125}
+  inputName: {fileID: 1209650099}
+  submitScoreEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - {m_Target: {fileID: 1399862427}, m_TargetAssemblyTypeName: Scoreboard, Assembly-CSharp, m_MethodName: SetLeaderboardEntry, m_Mode: 0, m_Arguments: {m_ObjectArgument: {fileID: 0}, m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, m_IntArgument: 0, m_FloatArgument: 0, m_StringArgument: , m_BoolArgument: 0}, m_CallState: 2}
+    m_CallsDirty: 1
 --- !u!1 &318977648
 GameObject:
   m_ObjectHideFlags: 0
@@ -4425,7 +4457,7 @@ MonoBehaviour:
   m_CharacterValidation: 0
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 0
+  m_CharacterLimit: 8
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
@@ -6508,6 +6540,182 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1360189039}
   m_CullTransparentMesh: 1
+--- !u!1 &1399862426
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1399862428}
+  - component: {fileID: 1399862427}
+  m_Layer: 0
+  m_Name: ScoreboardManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1399862427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399862426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd8c3fcec4d077d4f853a9905631888d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  names:
+  - {fileID: 863683108}
+  - {fileID: 702308515}
+  - {fileID: 853806761}
+  - {fileID: 587033216}
+  - {fileID: 908428069}
+  - {fileID: 1698681731}
+  - {fileID: 604406273}
+  - {fileID: 533816236}
+  - {fileID: 2070222226}
+  - {fileID: 873377490}
+  scores:
+  - {fileID: 450871793}
+  - {fileID: 426432986}
+  - {fileID: 545318305}
+  - {fileID: 859266188}
+  - {fileID: 1604027817}
+  - {fileID: 1292802990}
+  - {fileID: 1845480314}
+  - {fileID: 1540809438}
+  - {fileID: 67289276}
+  - {fileID: 896705657}
+  badWords:
+  - fuck
+  - chut
+  - choot
+  - bhenchod
+  - behenchod
+  - bhainchod
+  - behnchod
+  - madarchod
+  - chutiya
+  - chootiya
+  - loda
+  - lodu
+  - lode
+  - lavda
+  - lavdu
+  - lavde
+  - lund
+  - bhadva
+  - bhosdika
+  - bhosadika
+  - bhosadike
+  - bhosdike
+  - bsdk
+  - gaand
+  - fucker
+  - bastard
+  - bitch
+  - cunt
+  - penis
+  - vagina
+  - ballsack
+  - asshole
+  - ass
+  - tits
+  - boobs
+  - nipple
+  - breasts
+  - cum
+  - shit
+  - motherfucker
+  - mothercucker
+  - cuck
+  - sissy
+  - dildo
+  - pussy
+  - butt
+  - nigger
+  - nigga
+  - horny
+  - balls
+  - sex
+  - rape
+  - sperm
+  - jackass
+  - cock
+  - mother-fucker
+  - dickhead
+  - sistefucker
+  - whore
+  - hooker
+  - prostitute
+  - piss
+  - fucking
+  - twat
+  - wanker
+  - crap
+  - arse
+  - fag
+  - faggot
+  - nazi
+  - f@g
+  - n i g g
+  - f@g
+  - slut
+  - b00b
+  - gag
+  - blowjob
+  - gawk
+  - boo
+  - ching chong
+  - cocaine
+  - weed
+  - cok
+  - condom
+  - coochie
+  - crack
+  - deepthroat
+  - erotic
+  - erect
+  - squirt
+  - fingerbang
+  - fuk
+  - gay
+  - LGBT
+  - lesbian
+  - trans
+  - bisexual
+  - poop
+  - genital
+  - herpes
+  - sixtynine
+  - 69
+  - shag
+  - sixtynine
+  - queer
+  - porn
+  - bondage
+  - nuts
+  publicScoreboardKey: f8373312b2be2589a272287619abf6ade166ce11ca12388f66afd1e81eaeaf38
+--- !u!4 &1399862428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399862426}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -62.4, y: 4.884, z: -97.494}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425673834
 GameObject:
   m_ObjectHideFlags: 0
@@ -6611,7 +6819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1443045645
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7007,7 +7215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1558181969
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7703,7 +7911,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1694816698
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8871,7 +9079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2093198579}
   m_Layer: 0
-  m_Name: ----------------ENVIRONMENT-----------------
+  m_Name: -----------------ENVIRONMENT-----------------
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8986,6 +9194,7 @@ SceneRoots:
   - {fileID: 1498165954}
   - {fileID: 237772267}
   - {fileID: 1286441235}
+  - {fileID: 1399862428}
   - {fileID: 162664423}
   - {fileID: 1316519649}
   - {fileID: 195607992}
