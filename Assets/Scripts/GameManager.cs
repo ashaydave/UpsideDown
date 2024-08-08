@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
             RestartGame();
         }
 
-        if (Input.GetKeyDown("escape"))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             Debug.Log("Escape key pressed");
             QuitGame();
@@ -150,9 +150,16 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void QuitGame()
+    public void QuitGame()
     {
-        UnityEngine.Application.Quit();
-    }
+        #if UNITY_STANDALONE
+                Application.Quit();
 
+        #elif UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+
+        #elif UNITY_WEBGL
+                Application.OpenURL("https://ashay-dave.me");
+        #endif
+    }
 }
