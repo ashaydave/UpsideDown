@@ -7,9 +7,11 @@ using TMPro;
 public class ScoreTimer : MonoBehaviour
 {
     [SerializeField] private GameManager gameManager;
-
+    [SerializeField] private Scoreboard scoreboard;
     private float time;
     public bool timerOn = false;
+    
+    public int finalScoreInMS;
 
     public TextMeshProUGUI timerText, finalScoreText;
 
@@ -25,11 +27,13 @@ public class ScoreTimer : MonoBehaviour
 
     public void updateTimer(float currentTime)
     {
-        float minutes = Mathf.FloorToInt(currentTime / 60);
-        float seconds = Mathf.FloorToInt(currentTime % 60);
-        float ms = Mathf.FloorToInt((currentTime * 100) % 100);
+        int minutes = Mathf.FloorToInt(currentTime / 60);
+        int seconds = Mathf.FloorToInt(currentTime % 60);
+        int ms = Mathf.FloorToInt((currentTime * 100) % 100);
+        finalScoreInMS = (minutes * 60 * 1000) + (seconds * 1000) + (ms * 10);
+
         timerText.text = "Time Alive: " + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, ms);
-        finalScoreText.text = "Final Score: " + string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, ms);
+        finalScoreText.text = "Final Score: " + finalScoreInMS;
     }
 
     public void StartTimer()

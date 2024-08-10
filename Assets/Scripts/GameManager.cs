@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] private PlayerController playerController;
     [SerializeField] private DimensionSwitchTimer dimensionSwitchTimer;
     [SerializeField] private ScoreTimer scoreTimer;
+
     [SerializeField] private PoolManager poolManager;
+
     public GameObject timerEndScreen;
 
     public Camera mainCamera;
@@ -27,7 +29,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private BikeSpawner bikeSpawner;
 
     private bool scoreboardActive = false;
-
+    [SerializeField] private Scoreboard scoreboard;
 
     // void Start()
     // {
@@ -123,6 +125,11 @@ public class GameManager : MonoBehaviour
         scoreboardActive = scoreboard;
     }
 
+    public void SubmitScore()
+    {
+        StartCoroutine(scoreboard.SubmitScoreRoutine(scoreTimer.finalScoreInMS));
+    }
+
     // Press R to restart
     public void RestartGame()
     {
@@ -147,7 +154,6 @@ public class GameManager : MonoBehaviour
         {
             dimensionSwitchTimer.timerEndScreen.SetActive(false);
         }
-
     }
 
     public void QuitGame()
