@@ -55,7 +55,7 @@ public class DimensionSwitchTimer : MonoBehaviour
     {
         isFlashing = true;
         Color flashColor = Color.red;
-        AudioManager.PlaySound2D(AudioManager.SoundClips.DimensionTimer, 1f, 1f, 0f);
+        // AudioManager.PlaySound2D(AudioManager.SoundClips.DimensionTimer, 1f, 1f, 0f);
         while (timeLeft > 0)
         {
             timerText.color = flashColor;

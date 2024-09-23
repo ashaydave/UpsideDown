@@ -20,7 +20,7 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        AudioManager.PlaySound2D(AudioManager.SoundClips.ButtonHover, 1f, 1f, 0f);
+        // AudioManager.PlaySound2D(AudioManager.SoundClips.ButtonHover, 1f, 1f, 0f);
         button.image.sprite = hoverSprite;
     }
 
@@ -31,6 +31,6 @@ public class ButtonHover : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        AudioManager.PlaySound2D(AudioManager.SoundClips.ButtonClick, 1f, 1f, 0f);
+        // AudioManager.PlaySound2D(AudioManager.SoundClips.ButtonClick, 1f, 1f, 0f);
     }
 }

@@ -26,6 +26,6 @@ public class CountdownTimer : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         countdownText.gameObject.SetActive(false);
-        gameManager.BeginGame(); // Assuming StartGame is a method in your GameManager that starts the game
+        gameManager.BeginGame();
     }
 }

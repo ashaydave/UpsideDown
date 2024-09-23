@@ -98,7 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void EndGame()
     {
-        AudioManager.PlaySound3D(AudioManager.SoundClips.Death, playerController.playerTransform, 1f, 1f, 1f, 0f);
+        // AudioManager.PlaySound3D(AudioManager.SoundClips.Death, playerController.playerTransform, 1f, 1f, 1f, 0f);
         playerController.playerAnim.SetBool("Death", true);
         scoreTimer.StopTimer();
         dimensionSwitchTimer.StopTimer();

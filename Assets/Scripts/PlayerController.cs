@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
             else if (isDimensionSwitched && isOnGround)
             {
                 SwitchDimension();
-                AudioManager.PlaySound2D(AudioManager.SoundClips.DimensionSwitchUp, 1f, 1f, 0f);
+                // AudioManager.PlaySound2D(AudioManager.SoundClips.DimensionSwitchUp, 1f, 1f, 0f);
             }
         }
 
@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
             else if (!isDimensionSwitched && isOnGround)
             {
                 SwitchDimension();
-                AudioManager.PlaySound2D(AudioManager.SoundClips.DimensionSwitchDown, 1f, 1f, 0f);
+                // AudioManager.PlaySound2D(AudioManager.SoundClips.DimensionSwitchDown, 1f, 1f, 0f);
             }
         }
         //if (Input.GetKeyDown(KeyCode.LeftShift) && !gameOver)
@@ -105,7 +105,7 @@ public class PlayerController : MonoBehaviour
 
     private void Jump(Vector3 direction)
     {
-        AudioManager.PlaySound3D(AudioManager.SoundClips.Jump, playerTransform, 1f, 1f, 1f, 0f, false, false);
+        // AudioManager.PlaySound3D(AudioManager.SoundClips.Jump, playerTransform, 1f, 1f, 1f, 0f, false, false);
         playerRb.AddForce(direction * jumpForce, ForceMode.Impulse);
         isOnGround = false;
         playerAnim.SetBool("isJumping", true);
